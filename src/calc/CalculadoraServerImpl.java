@@ -21,21 +21,55 @@ public class CalculadoraServerImpl implements CalculadoraServer {
 		return num1 / num2;
 	}
 
-	public float calcularAreaDeFiguraGeometrica(FiguraGeometrica figura, float base, float raio, float altura) {
+	public float calcularAreaDeFiguraGeometrica(FiguraGeometrica figura, float altura, float base, float raio) {
 
-		if (figura.getNomeFigura().equals("Quadrado")) {
+		String tipoDeFigura = figura.getNomeFigura();
+
+		switch (tipoDeFigura) {
+
+		case "Quadrado":
 			Quadrado quadradoArea = new Quadrado(base);
 			return quadradoArea.calcularAreaDoQuadrado();
+
+		case "Círculo":
+			Circulo circulo = new Circulo(raio);
+			return circulo.calcularAreaDoCirculo();
+
+		case "Retângulo":
+			Retangulo retangulo = new Retangulo(base, altura);
+			return retangulo.calcularAreaDoRetangulo();
+
+		case "Triângulo":
+			Triangulo triangulo = new Triangulo(base, altura);
+			return triangulo.calcularAreaDoTriangulo();
+
 		}
 		return 0;
 	}
 
 	@Override
-	public float calcularPerimetroDeFiguraGeometrica(FiguraGeometrica figura, float base, float raio, float altura) {
+	public float calcularPerimetroDeFiguraGeometrica(FiguraGeometrica figura, float altura, float base, float raio) {
 
-		if (figura.getNomeFigura().equals("Quadrado")) {
-			Quadrado quadradoPerimetro = new Quadrado(base);
-			return quadradoPerimetro.calcularPerimetroDoQuadrado();
+		String tipoDeFigura = figura.getNomeFigura();
+
+		switch (tipoDeFigura) {
+
+		case "Quadrado":
+			Quadrado quadradoArea = new Quadrado(base);
+			return quadradoArea.calcularPerimetroDoQuadrado();
+
+		case "Círculo":
+			Circulo circulo = new Circulo(raio);
+			return circulo.calcularPerimetroDoCirculo();
+
+		case "Retângulo":
+			Retangulo retangulo = new Retangulo(base, altura);
+			return retangulo.calcularPerimetroDoRetangulo();
+
+		case "Triângulo":
+			Triangulo triangulo = new Triangulo(base, altura);
+			return triangulo.calcularPerimetroDoTriangulo();
+
 		}
 		return 0;
 	}

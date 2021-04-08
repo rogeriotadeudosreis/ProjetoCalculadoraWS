@@ -21,9 +21,9 @@ public interface CalculadoraServer {
 	float divisao(float num1, float num2);
 
 	@WebMethod
-	float calcularAreaDeFiguraGeometrica(FiguraGeometrica figura, float base, float raio, float altura);
+	float calcularAreaDeFiguraGeometrica(FiguraGeometrica figura, float altura, float base, float raio);
 
 	@WebMethod
-	float calcularPerimetroDeFiguraGeometrica(FiguraGeometrica figura, float base, float raio, float altura);
+	float calcularPerimetroDeFiguraGeometrica(FiguraGeometrica figura, float altura, float base, float raio);
 
 }
